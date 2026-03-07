@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<title>Dashboard de Usuarios</title>
+
+<style>
+body{
+    font-family: Arial;
+    text-align: center;
+    padding:40px;
+    background-color: rgb(190, 190, 201);
+}
+
+#contenedor-usuarios{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap:15px;
+    margin-top:20px;
+}
+
+.tarjeta-usuario{
+    border:1px solid #ccc;
+    padding:15px;
+    border-radius:6px;
+    background:white;
+}
+
+#spinner{
+    margin-top:20px;
+}
+
+.estado-ok{color:green;}
+.estado-error{color:red;}
+.estado-info{color:blue;}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Dashboard de Usuarios</h1>
+<div id="estado"></div>
+</header>
+
+<main>
+
+<section id="controles">
+<input type="search" id="busqueda" placeholder="Buscar usuario...">
+
+<button id="btnCargar">Cargar Usuarios</button>
+
+<button id="btnLimpiar">Limpiar</button>
+</section>
+
+<div id="spinner" hidden>
+<p>⏳ Cargando datos...</p>
+</div>
+
+<section id="contenedor-usuarios"></section>
+
+</main>
+
+<script type="module" src="dashboard.js"></script>
+
+</body>
+</html>
