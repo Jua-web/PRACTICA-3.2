@@ -3,6 +3,7 @@ import { obtenerPostsDeUsuario, obtenerUsuarios } from './api.js';
 const contenedor = document.getElementById('contenedor-usuarios');
 const spinner = document.getElementById('spinner');
 const estado = document.getElementById('estado');
+const btnCargar = document.getElementById('btnCargar');
 
 function mostrarEstado(msg, tipo='info'){
     estado.textContent = msg;
@@ -17,9 +18,11 @@ function renderizarTarjeta(usuario){
     card.className = 'tarjeta-usuario';
 
     card.innerHTML = `
+    <img src="https://ui-avatars.com/api/?name=${usuario.name}&background=2E5FA3&color=fff" class="avatar">
         <h3>${usuario.name}</h3>
         <p>📧 ${usuario.email}</p>
         <p>🌐 ${usuario.website}</p>
+        <p>🏢 ${usuario.company.name}</p>
 
         <button class="btn-posts" data-id="${usuario.id}">
         Ver publicaciones
@@ -56,7 +59,8 @@ function renderizarTarjeta(usuario){
 }
 
 
-document.getElementById('btnCargar').addEventListener('click', async () => {
+btnCargar.addEventListener('click', async () => {
+    btnCargar.disabled = true;
 
     spinner.hidden = false;
 
@@ -81,6 +85,7 @@ document.getElementById('btnCargar').addEventListener('click', async () => {
     }finally{
 
         spinner.hidden = true;
+        btnCargar.disabled = false;
 
     }
 
