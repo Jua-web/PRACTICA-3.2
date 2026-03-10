@@ -36,6 +36,7 @@ dashboard-proyecto
 ├── dashboard.html
 ├── dashboard.js
 ├── api.js
+├── estilos.css
 └── README.md
 ```
 
