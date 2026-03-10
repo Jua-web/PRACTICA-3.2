@@ -31,7 +31,7 @@ Endpoints utilizados:
 ## Estructura del proyecto
 
 ```
-dashboard-proyecto
+practica-3.2
 │
 ├── dashboard.html
 ├── dashboard.js
